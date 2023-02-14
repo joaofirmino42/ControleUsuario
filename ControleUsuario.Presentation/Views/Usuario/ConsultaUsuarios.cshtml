@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ControleUsuario.Infra.Data.Entities.Usuario>
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@using ControleUsuario.Presentation.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+ //ler o conteúdo json gravado na sessão
+ var json = HttpContextAccessor.HttpContext.Session.GetString("usuario");
+ //deserializar o conteúdo do JSON
+ var usuario = JsonConvert.DeserializeObject<UserIdentityModel>(json);
+}
+
+<div class="card">
+     <div class="card-header">
+        <a type="button" style="float:right;" href="@Url.Action("Logout","Account")" class="btn btn-sm btn-primary">Deslogar</a>
+
+    </div>
+    <div class="card-body" style="margin-top:20px;">
+        <h5>Dados do usuário autenticado:</h5>
+<hr/>
+<div class="mb-2">
+ ID do usuário: <strong>@usuario.Codigo</strong>
+</div>
+<div class="mb-2">
+ Nome do usuário: <strong>@usuario.Nome</strong>
+</div>
+<div class="mb-2">
+ Email: <strong>@usuario.Login</strong>
+</div>
+<div class="mb-2">
+ Cpf: <strong>@usuario.Cpf</strong>
+</div>
+<div class="mb-2">
+ Data / Hora de acesso ao sistema:
+<strong>@DateTime.Now</strong>
+</div>
+<div class="mb-2">
+ Cadastrado em: <strong>@usuario.Ultimo_Acesso</strong>
+</div>
+         <table id="tabelaUsuarios" class="table table-striped" style="width:100%">
+         <thead>
+             <tr>
+                 <th>E-mail</th>
+                 <th>Nome</th>
+                 <th>Cpf</th>
+                 <th>Ultimo_Acesso</th>
+                 <th>Ativo</th>
+             </tr>
+         </thead>   
+         <tbody>
+             @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Login</td>
+                        <td>@item.Nome</td>
+                        <td>@item.Cpf</td>
+                        <td>@item.Ultimo_Acesso</td>
+                        <td>@item.Bl_Ativo</td>
+                    </tr>
+                }
+         </tbody>
+         </table>
+    </div>
+</div>

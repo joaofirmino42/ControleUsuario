@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login de Usuário</title>
+    <!-- folhas de estilo CSS -->
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/toastr.min.css" />
+</head>
+<body class="bg-secondary container">
+
+    <div class="card">
+        <div class="card-header text-center">
+            <h5 class="card-title">Cadastro de Usuário</h5>
+        </div>
+        <div class="card-body">
+            <div class="text-center">
+
+
+                <p>Informe seus dados de cadastro</p>
+            </div>
+            <hr />
+            @if (TempData["MensagemErro"] != null)
+            {
+                <div class="alert alert-danger
+alert-dismissible fade show" role="alert">
+                    <strong>Erro!</strong>
+                    @TempData["MensagemErro"]
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="alert" arialabel="Close"></button>
+                </div>
+            }
+            <form>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="txtLoginCadastro">Email de acesso:</label>
+                        <input id="txtLoginCadastro" type="text" class="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtSenhaCadastro">Senha de acesso:</label>
+                        <input type="password" class="form-control" name="senha" id="txtSenhaCadastro" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtSenhaConfirmacaoCadastro">Confirmação de Senha:</label>
+                        <input type="password" class="form-control" name="senha" id="txtSenhaConfirmacaoCadastro" />
+                    </div>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="txtNomeCadastro">Nome:</label>
+                        <input type="text" class="form-control" id="txtNomeCadastro" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="txtCpfCadastro">Cpf:</label>
+                        <input type="text" class="form-control" id="txtCpfCadastro" />
+                    </div>
+                </div>
+                <br />
+                <div class="d-grid mb-2">
+                    <button id="btnCadastroUsuario" onclick="cadastrarUsuario()" type="button" class="btn btn-primary">
+                        Cadastrar Usuário
+                    </button>
+                </div>
+                <div class="text-center mt-4 font-weight-light">
+
+                    <a href="@Url.Action("Index","Account")" class="text-primary">Retornar para tela de Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- arquivos de estensão JS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/toastr.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/Usuario.js"></script>
+
+</body>
+</html>

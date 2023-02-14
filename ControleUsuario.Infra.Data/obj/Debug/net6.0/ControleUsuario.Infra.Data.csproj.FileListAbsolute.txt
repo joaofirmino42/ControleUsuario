@@ -1,0 +1,12 @@
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\bin\Debug\net6.0\ControleUsuario.Infra.Data.deps.json
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\bin\Debug\net6.0\ControleUsuario.Infra.Data.dll
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\bin\Debug\net6.0\ControleUsuario.Infra.Data.pdb
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.csproj.AssemblyReference.cache
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.AssemblyInfo.cs
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.dll
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\refint\ControleUsuario.Infra.Data.dll
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ControleUsuario.Infra.Data.pdb
+C:\Users\jfirm\Desktop\projetoFadami\ControleUsuario\ControleUsuario.Infra.Data\obj\Debug\net6.0\ref\ControleUsuario.Infra.Data.dll

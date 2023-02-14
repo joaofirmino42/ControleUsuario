@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@using ControleUsuario.Presentation.Models
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    //ler o conteúdo json gravado na sessão
+    var json = HttpContextAccessor.HttpContext.Session.GetString("usuario");
+    //deserializar o conteúdo do JSON
+    var usuario = JsonConvert.DeserializeObject<UserIdentityModel>(json);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Application</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/toastr.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fadami</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="@Url.Action("Index","Usuario")">Home</a>
+                    <a class="nav-link" href="@Url.Action("ConsultaUsuarios","Usuario")">Lista de Usuários</a>
+
+                </div>
+                <form class="d-flex">
+                    <span style="float:right;" class="text-black">Usuário:</span>
+                    &nbsp;
+                    <strong style="float:right;" class="text-black">
+                        @usuario.Nome
+                    </strong>
+                    &nbsp;&nbsp;
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/toastr.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
